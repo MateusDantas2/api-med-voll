@@ -1,8 +1,10 @@
 package br.com.med.voll.domain.entity;
 
 import br.com.med.voll.dto.DoctorRegisterDTO;
+import br.com.med.voll.dto.DoctorUpdateDTO;
 import br.com.med.voll.enumaration.Specialty;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,6 +31,7 @@ public class Doctor {
     private Specialty specialty;
     @Embedded
     private Address address;
+    private Boolean status;
 
     public Doctor(DoctorRegisterDTO registerDTO) {
         this.name = registerDTO.nome();
@@ -37,5 +40,22 @@ public class Doctor {
         this.crm = registerDTO.crm();
         this.specialty = registerDTO.especialidade();
         this.address = new Address(registerDTO.endereco());
+        this.status = true;
+    }
+
+    public void updateInformation(@Valid DoctorUpdateDTO dataDTO) {
+        if (dataDTO.nome() != null && !dataDTO.nome().isEmpty()) {
+            this.name = dataDTO.nome();
+        }
+        if (dataDTO.telefone() != null && !dataDTO.telefone().isEmpty()) {
+            this.phone = dataDTO.telefone();
+        }
+        if (dataDTO.endereco() != null) {
+            this.address.updateInformation(dataDTO.endereco());
+        }
+    }
+
+    public void delete() {
+        this.status = false;
     }
 }

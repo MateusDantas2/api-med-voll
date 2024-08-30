@@ -6,9 +6,9 @@ import br.com.med.voll.enumaration.Specialty;
 /**
  * @author Mateus Dantas
  */
-public record GetDoctorDTO(String nome, String email, String crm, Specialty especialidade) {
+public record GetDoctorDTO(Long id, String nome, String email, String crm, Specialty especialidade) {
 
     public GetDoctorDTO(Doctor doctor) {
-        this(doctor.getName(), doctor.getEmail(), doctor.getCrm(), doctor.getSpecialty());
+        this(doctor.getId(), doctor.getName(), doctor.getEmail(), doctor.getCrm(), doctor.getSpecialty());
     }
 }
