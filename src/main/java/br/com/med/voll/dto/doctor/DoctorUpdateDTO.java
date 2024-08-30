@@ -9,7 +9,7 @@ import jakarta.validation.constraints.*;
  */
 public record DoctorUpdateDTO(
         @NotNull
-        Integer id,
+        Long id,
         String nome,
         String telefone,
         @Valid AddressDTO endereco
