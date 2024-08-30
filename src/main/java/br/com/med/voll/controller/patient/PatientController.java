@@ -1,4 +1,4 @@
-package br.com.med.voll.controller;
+package br.com.med.voll.controller.patient;
 
 import br.com.med.voll.domain.entity.Patient;
 import br.com.med.voll.domain.repository.PatienteRepository;

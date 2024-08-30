@@ -18,7 +18,8 @@ import lombok.NoArgsConstructor;
 @Table(name = "medicos")
 @Entity(name = "medico")
 public class Doctor {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "nome")
     private String name;
