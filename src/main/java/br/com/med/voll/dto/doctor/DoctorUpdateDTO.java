@@ -1,6 +1,6 @@
-package br.com.med.voll.dto;
+package br.com.med.voll.dto.doctor;
 
-import br.com.med.voll.enumaration.Specialty;
+import br.com.med.voll.dto.address.AddressDTO;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 

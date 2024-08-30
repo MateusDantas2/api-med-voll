@@ -1,6 +1,6 @@
 package br.com.med.voll.domain.entity;
 
-import br.com.med.voll.dto.AddressDTO;
+import br.com.med.voll.dto.address.AddressDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.validation.Valid;

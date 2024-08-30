@@ -1,7 +1,7 @@
 package br.com.med.voll.domain.entity;
 
-import br.com.med.voll.dto.DoctorRegisterDTO;
-import br.com.med.voll.dto.DoctorUpdateDTO;
+import br.com.med.voll.dto.doctor.DoctorRegisterDTO;
+import br.com.med.voll.dto.doctor.DoctorUpdateDTO;
 import br.com.med.voll.enumaration.Specialty;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;

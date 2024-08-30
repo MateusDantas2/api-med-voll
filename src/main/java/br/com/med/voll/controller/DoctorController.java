@@ -2,9 +2,9 @@ package br.com.med.voll.controller;
 
 import br.com.med.voll.domain.entity.Doctor;
 import br.com.med.voll.domain.repository.DoctorRepository;
-import br.com.med.voll.dto.DoctorRegisterDTO;
-import br.com.med.voll.dto.DoctorUpdateDTO;
-import br.com.med.voll.dto.GetDoctorDTO;
+import br.com.med.voll.dto.doctor.DoctorRegisterDTO;
+import br.com.med.voll.dto.doctor.DoctorUpdateDTO;
+import br.com.med.voll.dto.doctor.GetDoctorDTO;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
@@ -40,20 +40,14 @@ public class DoctorController {
     @PutMapping
     @Transactional
     public void update(@RequestBody @Valid DoctorUpdateDTO doctorUpdateDTO) {
-        var doctor = doctorRepository.getReferenceById(Long.valueOf(doctorUpdateDTO.id()));
+        Doctor doctor = doctorRepository.getReferenceById(Long.valueOf(doctorUpdateDTO.id()));
         doctor.updateInformation(doctorUpdateDTO);
     }
-
-//    @Transactional
-//    @DeleteMapping("/{id}")
-//    public void delete(@PathVariable Long id) {
-//        doctorRepository.deleteById(id);
-//    }
 
     @Transactional
     @DeleteMapping("/{id}")
     public void changeStatus(@PathVariable Long id) {
-        var medico = doctorRepository.getReferenceById(id);
-        medico.delete();
+        Doctor doctor = doctorRepository.getReferenceById(id);
+        doctor.delete();
     }
 }

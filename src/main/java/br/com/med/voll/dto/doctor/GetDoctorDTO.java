@@ -1,4 +1,4 @@
-package br.com.med.voll.dto;
+package br.com.med.voll.dto.doctor;
 
 import br.com.med.voll.domain.entity.Doctor;
 import br.com.med.voll.enumaration.Specialty;
