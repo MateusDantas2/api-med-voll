@@ -39,13 +39,13 @@ public class TokenService {
         try {
             Algorithm algorithm = Algorithm.HMAC256(secret);
             return JWT.require(algorithm)
-                .withIssuer("D&M TECH - API")
+                .withIssuer("VOLL MED - API")
                 .build()
                 .verify(token)
                 .getSubject();
 
         } catch (JWTVerificationException e) {
-            return "";
+            throw new RuntimeException("Token não enviado no cabeçalho Authorization!");
         }
     }
 
